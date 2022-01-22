@@ -155,7 +155,7 @@ textarea {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: .89em;
   line-height: 1.75;
   color: #777777;
@@ -176,7 +176,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Slab", serif;
+  font-family: "Jost", serif;
   color: #2c2c2c;
 }
 
@@ -231,7 +231,7 @@ blockquote {
   padding-left: 40px;
   font-size: 1.2em;
   color: #aaaaaa;
-  font-family: "Roboto Slab", serif;
+  font-family: "Jost", serif;
 }
 @media screen and (max-width: 768px) {
   blockquote {
@@ -550,7 +550,7 @@ a.btn-left:hover, .top-header .social-top ul li a:hover, .main-header .menu-wrap
 }
 #search-overlay .search-form-holder h2 {
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 2.7em;
   font-weight: 300;
   margin-bottom: 30px;
@@ -989,7 +989,7 @@ h3.grid-heading {
 .staff-member .overlay .overlay-inner span {
   color: white;
   font-size: 1.3em;
-  font-family: "Roboto Slab", serif;
+  font-family: "Jost", serif;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1066,7 +1066,7 @@ div.load-more {
   display: block;
 }
 div.load-more a.load-more {
-  font-family: "Roboto", sans-serif;
+  font-family: "Jost", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
   color: #2c2c2c;
@@ -1150,7 +1150,7 @@ div.load-more a.load-more:active {
 .project-infos ul.project-meta li {
   display: inline-block;
   margin-right: 50px;
-  font-family: "Roboto Slab", serif;
+  font-family: "Jost", serif;
 }
 .project-infos ul.project-meta li:last-child {
   margin-right: 0;
@@ -1224,7 +1224,7 @@ div.load-more a.load-more:active {
   margin-top: 30px;
 }
 .blog-tags span {
-  font-family: "Roboto Slab", serif;
+  font-family: "Jost", serif;
 }
 .blog-tags a {
   display: inline-block;
@@ -1373,7 +1373,7 @@ ul.archive-list li {
 ul.archive-list li h3 {
   font-size: 20px;
   font-weight: 300;
-  font-family: "Roboto", sans-serif;
+  font-family: "Jost", sans-serif;
 }
 ul.archive-list li h3 a {
   color: #777777;
