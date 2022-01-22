@@ -17,6 +17,8 @@ export async function getStaticProps() {
     })
     .all();
 
+  console.log("Getting fresh data from Airtable...");
+
   const projects = records.map((project) => {
     return {
       name: project.get('Name') || '',
@@ -32,6 +34,7 @@ export async function getStaticProps() {
     props: {
       projects,
     },
+    revalidate: 60
   };
 }
 
