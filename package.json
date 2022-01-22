@@ -1,5 +1,5 @@
 {
-  "name": "airtable-nextjs",
+  "name": "airtable-nextjs-lovedagercom-projects",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "airtable": "^0.8.1",
+    "airtable": "^0.11.1",
     "next": "9.3.6",
     "react": "16.13.1",
     "react-dom": "16.13.1"

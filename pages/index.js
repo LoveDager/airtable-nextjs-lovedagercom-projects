@@ -1,67 +1,86 @@
 import React from 'react';
 import Head from 'next/head';
 import Airtable from 'airtable';
+import Layout from '../components/layout';
+import { Gridview2, Gridview3 } from '../components/gridview';
+import { Projectitem2, Projectitem3 } from '../components/projectitem';
 
 export async function getStaticProps() {
   const airtable = new Airtable({
-    apiKey: 'AIRTABLE_ACCOUNT_API_KEY',
+    apiKey: process.env.AIRTABLE_APIKEY,
   });
 
   const records = await airtable
-    .base('AIRTABLE_BASE_ID')('Furniture')
+    .base(process.env.AIRTABLE_BASE)('Projects')
     .select({
-      fields: ['Name', 'Type', 'Images', 'Unit cost'],
+      fields: ['Name', 'Oneliner', 'Images', 'Long Description', 'Status', 'Link'],
     })
     .all();
 
-  const products = records.map((product) => {
+  const projects = records.map((project) => {
     return {
-      name: product.get('Name'),
-      type: product.get('Type'),
-      images: product.get('Images').map((image) => image.url),
-      cost: product.get('Unit cost'),
+      name: project.get('Name') || '',
+      oneliner: project.get('Oneliner') || '',
+      images: project.get('Images')?.map((image) => image.url) || [],
+      description: project.get('Long Description') || '',
+      status: project.get('Status') || '',
+      link: project.get('Link') || '',
     };
   });
 
   return {
     props: {
-      products,
+      projects,
     },
   };
 }
 
-function Product({ name, type, images, cost }) {
+function Project({ name, oneliner, images, description, status, link }) {
   return (
     <div style={{ padding: '32px' }}>
       <div>
         <b>{name}</b>
       </div>
-      <div>{type}</div>
+      <div>{oneliner}</div>
       {images.map((image) => (
         <img style={{ maxWidth: 200 }} key={image} src={image} alt={name} />
       ))}
-      <div>${cost}</div>
+      <div>${link}</div>
     </div>
   );
 }
 
-function Home({ products }) {
+function Home({ projects }) {
   return (
-    <div>
-      <h1 className="title">Airtable Next.js example</h1>
-
-      <div>
-        {products.map((product) => (
-          <Product
-            key={product.name}
-            name={product.name}
-            type={product.type}
-            images={product.images}
-            cost={product.cost}
-          />
-        ))}
-      </div>
-    </div>
+    <Layout>
+      <Gridview2>
+        {projects.map((project) => (
+            <Projectitem2
+              key={project.name}
+              name={project.name}
+              oneliner={project.oneliner}
+              images={project.images}
+              description={project.description}
+              status={project.status}
+              link={project.link}
+            />
+          ))}
+      </Gridview2>
+      <Gridview3>
+        {projects.map((project) => (
+            <Projectitem3
+              key={project.name}
+              name={project.name}
+              oneliner={project.oneliner}
+              images={project.images}
+              description={project.description}
+              status={project.status}
+              link={project.link}
+            />
+          ))}
+      </Gridview3>
+      
+    </Layout>
   );
 }
 
